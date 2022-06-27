@@ -1,0 +1,53 @@
+<head>
+    <style>
+        .box{
+            border: 1.3px solid rgb(90, 84, 84); 
+            border-radius: 1em;
+            padding-left: 3em;
+            padding-bottom: 1em;
+            box-shadow: 0.5em 0.5em 0.5em gray;
+        }
+    </style>
+</head>
+<div class="table-wrapper">
+    <div class="table-title d-flex justify-content-between mb-3">
+        <h4><b>View Employee</b></h4>
+        <button class="btn btn-outline-success" onclick="history.back()">
+          <i class="fas fa-plus-circle"></i><span><span class="material-icons" style="float: left; padding-right :0.2em;">
+            arrow_back</span>Back</span>
+      </button>
+    </div>
+    <div class="box">
+        <p class="mt-4" style="text-align: right; padding-right: 2em; padding-bottom: 0; margin-bottom: -1.1em;
+        font-size: 13px; color: gray;">
+            <span><b>ID : </b></span>
+            {{post?._id}}
+        </p>
+        <div class="row justify-content-start" style="margin-top: 0; padding-top:0;">
+            <div class="col-4">
+                <p class="mt-4">
+                    <span><b>First Name</b></span><br>
+                    {{post?.firstname}}
+                </p>
+            </div>
+            <div class="col-4">
+                <p class="mt-4">
+                    <span><b>Last Name</b></span><br>
+                    {{post?.lastname}}
+                </p>
+            </div>
+        </div>
+        <p class="mt-4">
+            <span><b>Email</b></span><br>
+            {{post?.email}}
+        </p>
+        <p class="mt-4">
+            <span><b>Address</b></span><br>
+            {{post?.address}}
+        </p>
+        <p class="mt-4">
+            <span><b>Phone</b></span><br>
+            {{post?.phone}}
+        </p>
+    </div>
+</div>

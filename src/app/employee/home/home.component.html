@@ -1,0 +1,41 @@
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<div class="table-wrapper">
+  <div class="table-title d-flex justify-content-between mb-3">
+      <h4>Manage Employees</h4>
+      <button class="btn btn-outline-success" (click)="addModal()">
+          <i class="fas fa-plus-circle"></i><span><span class="material-icons" style="float: left; padding-right :0.2em;">
+            add</span>Add</span>
+      </button>
+  </div>
+  <table class="table table-hover" style="box-shadow: 0.2em 0.2em 0.2em whitesmoke;">
+      <thead style="background-color: rgb(241, 236, 236);">
+          <tr style="color: #4d628a;">
+              
+              <th scope="col" style="text-align: center;">First Name</th>
+              <th scope="col" style="text-align: center;">Last Name</th>
+              <th scope="col" style="text-align: center;">Email</th>
+              <th scope="col" style="text-align: center;">Address</th>
+              <th scope="col" style="text-align: center;">Phone</th>
+              <th scope="col" style="text-align: center;">Action</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let posts of posts">
+              <th scope="row">{{posts.firstname}}</th>
+              <td>{{posts.lastname}}</td>
+              <td>{{posts.email}}</td>
+              <td>{{posts.address}}</td>
+              <td>{{posts.phone}}</td>
+              <td style="text-align: center;">
+                  <button [routerLink]="'/employee/' + posts._id" type="button"
+                      class="btn btn-outline-info btn-sm" style="margin-right: 1em; border: none;"><i class="material-icons" style="font-size: 20px;">&#xE417;</i></button>
+                  <button (click)="editModal(posts, posts._id)" type="button" class="btn btn-outline-dark btn-sm" style="margin-right: 1em; border: none;">
+                    <i class="material-icons" style="font-size: 20px;">&#xE254;</i></button>
+                  <button (click)="hapus(posts._id)" type="button" class="btn btn-outline-danger btn-sm" style="border:none;"><i class="material-icons" style="font-size: 20px;">&#xE872;</i></button>
+              </td>
+          </tr>
+      </tbody>
+  </table>
+</div>
